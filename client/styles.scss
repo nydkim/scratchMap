@@ -1,0 +1,19 @@
+path {
+  fill: green;
+  stroke: yellow;
+  stroke-opacity: 0.3;
+  // transition: fill .05s ease-in;
+}
+
+svg {
+  background-color: darkblue;
+}
+
+.country:hover {
+  fill: red;
+
+}
+
+body {
+  // background-color: blue;
+}
