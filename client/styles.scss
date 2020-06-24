@@ -1,6 +1,8 @@
 body {
   font-family: 'Permanent Marker', cursive;
   background-color: #f5f4f4;
+  color: #5c6364;
+  margin: 0;
 }
 
 path {
@@ -10,8 +12,17 @@ path {
   // transition: fill .05s ease-in;
 }
 
+img {
+  margin-right: 20px;
+  height: 148;
+  width: 329;
+}
+
 input {
   font-family: 'Permanent Marker', cursive;
+  border: grey 1px solid;
+  border-radius: 3px;
+  margin-right: 2px;
 }
 
 button {
@@ -27,10 +38,26 @@ svg {
   width: 100%;
 }
 
+:visited {
+  color: #979797;
+}
+
 .visited {
-  fill: #c1c1c1;
+  fill: #5c6364;
 }
 
 .country:hover {
   fill: red;
+}
+
+#list {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 15%;
+  background-color: rgba(230, 200, 119, 0.6);
+
+  height: 100vh;
+  margin: 0;
+  overflow-y: scroll;
 }

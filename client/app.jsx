@@ -5,6 +5,7 @@ import Map from './Map.jsx';
 import Login from './Login.jsx';
 import Signup from './Signup.jsx';
 import Data from './Data.jsx';
+import List from './List.jsx';
 import './styles.scss';
 
 class App extends Component {
@@ -86,11 +87,10 @@ class App extends Component {
           </Router>
         </div>
         <Map clickHandle={this.clickHandle} />
+        <List countries={this.state.countries} />
       </div>
     );
   }
 }
 
 export default App;
-
-//render={(props) => <Signup loggedIn={this.loggedIn} />}

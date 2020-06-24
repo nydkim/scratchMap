@@ -42,7 +42,7 @@ class Signup extends Component {
 
     return (
       <div>
-        <h1>Sign up to start your own scratch map!</h1>
+        <h1>Sign up to save your scratch map!</h1>
         <input id="signupName" name="name" type="text" placeholder="name"></input>
         <input id="signupId" name="username" type="text" placeholder="username"></input>
         <input id="signupPw" name="password" type="password" placeholder="password"></input>
