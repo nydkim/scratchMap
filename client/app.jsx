@@ -12,13 +12,8 @@ class App extends Component {
     super();
     this.state = { name: '', id: '', countries: [] };
     this.clickHandle = this.clickHandle.bind(this);
-    // this.login = this.login.bind(this);
     this.loggedIn = this.loggedIn.bind(this);
   }
-
-  // login(e) {
-  //   console.log(e);
-  // }
 
   clickHandle(code) {
     const countries = this.state.countries.slice();
@@ -26,12 +21,29 @@ class App extends Component {
       countries.push(code);
       this.setState({ ...this.state, countries });
       document.getElementById(`${code}`).setAttribute('class', 'visited');
-      fetch('/');
+      if (this.state.id) {
+        fetch('/add', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ id: this.state.id, code }),
+        });
+      }
     } else {
       const index = this.state.countries.indexOf(code);
       countries.splice(index, 1);
       this.setState({ ...this.state, countries });
       document.getElementById(`${code}`).classList.remove('visited');
+      if (this.state.id) {
+        fetch('/del', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ id: this.state.id, code }),
+        });
+      }
     }
   }
 
@@ -42,12 +54,12 @@ class App extends Component {
 
   componentDidUpdate() {
     console.log('updated!', this.state);
+    this.state.countries.forEach((code) => {
+      document.getElementById(`${code}`).setAttribute('class', 'visited');
+    });
   }
 
-  //send the updated list to the database
-
-  componentDidMount() {
-    //get the list from the database
+  componentDidUpdate() {
     this.state.countries.forEach((code) => {
       console.log('update', `${code}`);
       document.getElementById(`${code}`).setAttribute('class', 'visited');
@@ -60,7 +72,13 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/signup" component={Signup} />
-            <Route exact path="/data" component={Data} />
+            <Route
+              exact
+              path="/data"
+              render={(props) => (
+                <Data loggedIn={this.loggedIn} name={this.state.name} state={this.state} />
+              )}
+            />
             <Route exact path="/" component={Login} />
           </Switch>
 
