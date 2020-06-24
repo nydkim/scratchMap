@@ -9,9 +9,12 @@ svg {
   background-color: darkblue;
 }
 
+.visited {
+  fill: yellow;
+}
+
 .country:hover {
   fill: red;
-
 }
 
 body {

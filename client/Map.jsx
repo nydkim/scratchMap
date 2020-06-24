@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { select, json, geoPath, geoNaturalEarth1 } from 'd3';
-import {feature} from 'topojson';
+import { feature } from 'topojson';
 
 class Map extends Component {
   constructor() {
@@ -9,7 +9,6 @@ class Map extends Component {
   }
 
   componentDidMount() {
-
     const projection = geoNaturalEarth1();
     const pathGenerator = geoPath().projection(projection);
 
@@ -21,26 +20,25 @@ class Map extends Component {
       console.log('inside json');
       const countries = feature(data, data.objects.countries);
       // console.log(data);
-      svg.selectAll('path')
+      svg
+        .selectAll('path')
         .data(countries.features)
         .enter()
         .append('path')
         .attr('class', 'country')
-        .attr('d', d => pathGenerator(d))
-        .on('click', d => {console.log('clicked', d.properties.name, d.id)})
+        .attr('d', (d) => pathGenerator(d))
+        .on('click', (d) => {
+          console.log('clicked', d.properties.name, d.id);
+          return this.props.clickHandle(d.id);
+        })
+        .attr('id', d.id)
         .append('title')
-          .text(d => d.properties.name)
+        .text((d) => d.properties.name);
     });
-
   }
 
-
   render() {
-
-    return (
-      <svg ref="vector" height="500" width="9600">
-      </svg>
-    );
+    return <svg ref="vector" height="500" width="9600"></svg>;
   }
 }
 

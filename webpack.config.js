@@ -4,7 +4,7 @@ module.exports = () => {
   // console.log(process.env.NODE_ENV);
   return {
     mode: process.env.NODE_ENV,
-    entry: './client/app.jsx',
+    entry: './client/index.js',
     output: {
       path: `${__dirname}/build`,
       filename: 'bundle.js',
@@ -12,7 +12,7 @@ module.exports = () => {
 
     devServer: {
       proxy: {
-        '/api/leaders': 'http://localhost:3000',
+        '/': 'http://localhost:3000',
       },
       publicPath: 'http://localhost:8080/build/',
     },
