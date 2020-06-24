@@ -1,3 +1,8 @@
+body {
+  font-family: 'Permanent Marker', cursive;
+  background-color: #f5f4f4;
+}
+
 path {
   fill: #e5c37b;
   stroke: #ac6737;
@@ -5,26 +10,27 @@ path {
   // transition: fill .05s ease-in;
 }
 
+input {
+  font-family: 'Permanent Marker', cursive;
+}
+
+button {
+  font-family: 'Permanent Marker', cursive;
+}
+
 svg {
   background-color: #f5f4f4;
 }
 
-title {
-  color: red;
-  background-color: white;
+#topBar {
+  display: flex;
+  width: 100%;
 }
 
-.tooltip {
-  color: pink;
-}
 .visited {
   fill: #c1c1c1;
 }
 
 .country:hover {
   fill: red;
-}
-
-body {
-  background-color: #f5f4f4;
 }

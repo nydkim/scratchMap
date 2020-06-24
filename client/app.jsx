@@ -69,21 +69,23 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Router>
-          <Switch>
-            <Route exact path="/signup" component={Signup} />
-            <Route
-              exact
-              path="/data"
-              render={(props) => (
-                <Data loggedIn={this.loggedIn} name={this.state.name} state={this.state} />
-              )}
-            />
-            <Route exact path="/" component={Login} />
-          </Switch>
-
-          <Map clickHandle={this.clickHandle} />
-        </Router>
+        <div id="topBar">
+          <img src="/asset/logo.JPG" />
+          <Router>
+            <Switch>
+              <Route exact path="/signup" component={Signup} />
+              <Route
+                exact
+                path="/data"
+                render={(props) => (
+                  <Data loggedIn={this.loggedIn} name={this.state.name} state={this.state} />
+                )}
+              />
+              <Route exact path="/" component={Login} />
+            </Switch>
+          </Router>
+        </div>
+        <Map clickHandle={this.clickHandle} />
       </div>
     );
   }

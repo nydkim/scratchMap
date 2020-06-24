@@ -1,2 +1,2 @@
-path{fill:green;stroke:yellow;stroke-opacity:0.3}svg{background-color:darkblue}.visited{fill:yellow}.country:hover{fill:red}
+body{font-family:'Permanent Marker', cursive;background-color:#f5f4f4}path{fill:#e5c37b;stroke:#ac6737;stroke-opacity:0.3}input{font-family:'Permanent Marker', cursive}button{font-family:'Permanent Marker', cursive}svg{background-color:#f5f4f4}#topBar{display:flex;width:100%}.visited{fill:#c1c1c1}.country:hover{fill:red}
 

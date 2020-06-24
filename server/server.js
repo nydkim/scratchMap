@@ -7,6 +7,8 @@ const cookieParser = require('cookie-parser');
 app.use(express.json());
 app.use(cookieParser());
 
+app.use('/asset', express.static(path.join(__dirname, '../client/asset')));
+
 app.use('/build', () => {
   // console.log('inside build');
   express.static(path.join(__dirname, '../build'));
