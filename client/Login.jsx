@@ -4,18 +4,19 @@ import { Link } from 'react-router-dom';
 class Login extends Component {
   login() {
     console.log('in login');
-    const user = document.getElementById('loginId').value;
+    const id = document.getElementById('loginId').value;
     const pw = document.getElementById('loginPw').value;
     fetch('/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ user, pw }),
+      body: JSON.stringify({ id, pw }),
     })
       .then((res) => res.json())
       .then((data) => {
         if (data.login) {
+          console.log('why in??');
           window.location.href = '/data';
         }
       });
@@ -24,10 +25,10 @@ class Login extends Component {
     return (
       <div>
         <h1>Welcome to Scratch Map!</h1>
-        <input name="username" type="text" placeholder="username"></input>
-        <input name="password" type="password" placeholder="password"></input>
+        <input id="loginId" name="username" type="text" placeholder="username"></input>
+        <input id="loginPw" name="password" type="password" placeholder="password"></input>
         <button onClick={this.login}>Log in</button>
-        <br/>
+        <br />
         <Link to="./signup">Sign up</Link>
       </div>
     );

@@ -18,22 +18,26 @@ class App extends Component {
   }
 
   clickHandle(code) {
-    console.log(code);
     const countries = this.state.countries.slice();
     if (!this.state.countries.includes(code)) {
       countries.push(code);
       this.setState({ ...this.state, countries });
+      document.getElementById(`${code}`).setAttribute('class', 'visited');
     } else {
       const index = this.state.countries.indexOf(code);
       countries.splice(index, 1);
       this.setState({ ...this.state, countries });
+      document.getElementById(`${code}`).classList.remove('visited');
     }
-    console.log('state^^', this.state);
   }
 
-  componentDidUpdate() {
+  //send the updated list to the database
+
+  componentDidMount() {
+    //get the list from the database
     this.state.countries.forEach((code) => {
-      document.getElementById('code').className('visited');
+      console.log('update', `${code}`);
+      document.getElementById(`${code}`).setAttribute('class', 'visited');
     });
   }
 
