@@ -24,7 +24,6 @@ class Map extends Component {
     );
 
     json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json').then((data) => {
-      console.log('inside json');
       const countries = feature(data, data.objects.countries);
       // console.log(data);
       g.selectAll('path')
@@ -39,12 +38,14 @@ class Map extends Component {
         })
         .attr('id', (d) => d.id)
         .append('title')
-        .text((d) => d.properties.name);
+        .text((d) => d.properties.name)
+        .attr('class', 'tooltip');
     });
   }
 
   render() {
-    return <svg ref="vector" height="500" width="9600"></svg>;
+    // return <h1>this is map</h1>;
+    return <svg ref="vector" height="500" width="960"></svg>;
   }
 }
 

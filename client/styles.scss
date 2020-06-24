@@ -1,16 +1,24 @@
 path {
-  fill: green;
-  stroke: yellow;
+  fill: #e5c37b;
+  stroke: #ac6737;
   stroke-opacity: 0.3;
   // transition: fill .05s ease-in;
 }
 
 svg {
-  background-color: darkblue;
+  background-color: #f5f4f4;
 }
 
+title {
+  color: red;
+  background-color: white;
+}
+
+.tooltip {
+  color: pink;
+}
 .visited {
-  fill: yellow;
+  fill: #c1c1c1;
 }
 
 .country:hover {
@@ -18,5 +26,5 @@ svg {
 }
 
 body {
-  // background-color: blue;
+  background-color: #f5f4f4;
 }

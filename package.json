@@ -20,6 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "browserify": "^10.2.4",
+    "cookie-parser": "^1.4.5",
     "d3": "^5.16.0",
     "express": "^4.12.3",
     "gulp": "^3.9.0",

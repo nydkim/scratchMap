@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class Signup extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isLoggedIn: false,
+    };
+
+    this.signup = this.signup.bind(this);
+  }
+
   signup() {
     console.log('in signup');
     const name = document.getElementById('signupName').value;
@@ -16,15 +25,24 @@ class Signup extends Component {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log('data back', data);
         if (data.login) {
-          window.location.href = '/data';
+          return this.setState({
+            isLoggedIn: true,
+          });
         }
       });
   }
 
   render() {
+    if (this.state.isLoggedIn) {
+      console.log('redirecting to data');
+      return <Redirect to="/data" />;
+    }
+
     return (
       <div>
+        <h1>Sign up to start your own scratch map!</h1>
         <input id="signupName" name="name" type="text" placeholder="name"></input>
         <input id="signupId" name="username" type="text" placeholder="username"></input>
         <input id="signupPw" name="password" type="password" placeholder="password"></input>
