@@ -22,7 +22,7 @@
 
 Clone this repo: `git clone https://github.com/nydkim/scratchMap.git`
 
-Install dependencies: 'npm i`
+Install dependencies: `npm i`
 
 Run the app: `npm run`
 
