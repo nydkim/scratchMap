@@ -1,5 +1,5 @@
 const { Pool } = require('pg');
-const password = 'nakyoung';
+const password = '';
 const connectionString = `postgressql:postgres:${password}@localhost:5432/scratchmap`;
 
 const pool = new Pool({
