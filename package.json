@@ -19,11 +19,11 @@
   "author": "CodesmithLLC https://github.com/CodesmithLLC <hello@codesmith.io>",
   "license": "ISC",
   "dependencies": {
-    "browserify": "^10.2.4",
+    "browserify": "^17.0.0",
     "cookie-parser": "^1.4.5",
     "d3": "^5.16.0",
     "express": "^4.12.3",
-    "gulp": "^3.9.0",
+    "gulp": "^4.0.2",
     "history": "^5.0.0",
     "pg": "^8.2.1",
     "prop-types": "^15.6.1",
